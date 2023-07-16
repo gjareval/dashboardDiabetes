@@ -1,0 +1,27 @@
+<div id="tabla1" class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Tabla de datos
+    </div>
+    <div class="card-body">
+        <table>
+            <tbody>
+                <tr>
+                    <th>Age</th>
+                    <th>IMC</th>
+                    <th>Presión sanguínea</th>
+                    <th>Glucosa</th>
+                    <th>Insulina</th>
+                </tr>
+                <tr *ngFor="let datum of data">
+                    <td> {{  datum[ "Age" ]  }}  </td>
+                    <td> {{  datum[ "BMI" ]  }}  </td>
+                    <td> {{  datum[ "BloodPressure" ]  }} </td>
+                    <td> {{  datum[ "Glucose" ]  }} </td>
+                    <td> {{  datum[ "Insulin" ]  }} </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
