@@ -15,7 +15,19 @@ describe('Informacion2Component', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('div element', ()=> {
+    const fixture = TestBed.createComponent(Informacion2Component);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('div')).not.toBe(null);
+  })
+
+//Valide la NO existencia de un elemento <p> en la plantilla html del elemento
+
+it('No nav element', ()=> {
+  const fixture = TestBed.createComponent(Informacion2Component);
+  fixture.detectChanges();
+  const compiled = fixture.debugElement.nativeElement;
+  expect(compiled.querySelector('nav')).toBe(null);
+})
 });

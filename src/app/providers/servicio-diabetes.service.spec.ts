@@ -1,33 +1,31 @@
-import { TestBed, inject } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { ServicioDiabetesService } from './servicio-diabetes.service';
+import { Diabetes } from '../interfaces/diabetes';
 
 describe('ServicioDiabetesService', () => {
-  let servicio: ServicioDiabetesService;
-  let httpMock: HttpTestingController;
+  let service: ServicioDiabetesService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [ServicioDiabetesService]
+      imports: [ HttpClientModule ],
+
+      providers: [ ServicioDiabetesService ]
     });
-    servicio = TestBed.inject(ServicioDiabetesService);
-    httpMock = TestBed.inject(HttpTestingController);
+    
+    service = TestBed.inject(ServicioDiabetesService);
   });
 
-  afterEach(() => {
-    httpMock.verify();
-  });
-
-  it('should retrieve response from the API', () => {
-    const mockResponse = { key: 'value' };
-
-    servicio.getResponse().subscribe(response => {
-      expect(response).toEqual(mockResponse);
+  it('Service should return value from observable', (done: DoneFn) => {
+    //Invoque el método con la petición asincrónica
+    service.getResponse().subscribe(data => {
+      
+      // Valide que la respuesta sea mayor que 0
+      expect((data as Diabetes[]).length).toBeGreaterThan(0)
+      
+      // Que espere hasta que llegue la respuesta 
+      done();
     });
-
-    const req = httpMock.expectOne('https://diabetes-d1dac-default-rtdb.firebaseio.com/collection.json');
-    expect(req.request.method).toBe('GET');
-    req.flush(mockResponse);
   });
+
 });

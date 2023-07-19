@@ -15,7 +15,17 @@ describe('Informacion1Component', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('div element', ()=> {
+    const fixture = TestBed.createComponent(Informacion1Component);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('div')).not.toBe(null);
+  })
+
+  it('No nav element', ()=> {
+    const fixture = TestBed.createComponent(Informacion1Component);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('nav')).toBe(null);
+  })
 });
