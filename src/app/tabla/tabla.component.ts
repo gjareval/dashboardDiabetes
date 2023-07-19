@@ -16,7 +16,7 @@ export class TablaComponent {
 
   ngOnInit() {
     this.dataProvider.getResponse().subscribe((response) => { 
-      this.data = (response as Diabetes[]).slice(0,10); 
+      this.data = (response as Diabetes[]).slice(0,5); 
     })
   }
 
