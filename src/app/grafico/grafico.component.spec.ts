@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GraficoComponent } from './grafico.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ServicioDiabetesService } from '../providers/servicio-diabetes.service';
 
 describe('GraficoComponent', () => {
   let component: GraficoComponent;
@@ -8,24 +9,31 @@ describe('GraficoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GraficoComponent]
+      declarations: [GraficoComponent],
+      imports: [ HttpClientModule ],
+      providers: [ ServicioDiabetesService ]
     });
     fixture = TestBed.createComponent(GraficoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('canvas element', ()=> {
-    const fixture = TestBed.createComponent(GraficoComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('canvas')).not.toBe(null);
-  })
+  it('should request service user after Angular calls ngOnInit', (done: DoneFn) => {
 
-  it('No nav element', ()=> {
-    const fixture = TestBed.createComponent(GraficoComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('nav')).toBe(null);
-  })
+    // Llame a ngOnInit para simular el ciclo de vida del componente
+    component.ngOnInit();
+
+
+    // Utilice fixture.whenStable para esperar a que se resuelva el observable del servicio
+    fixture.whenStable().then(() => {
+      
+
+      // Valide que la respuesta sea mayor que 0
+      expect(component.data.length).toBeGreaterThan(0)
+
+      // Que espere hasta que llegue la respuesta
+      done();
+
+    });
+  });
 });

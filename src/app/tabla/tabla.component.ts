@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { Diabetes } from '../interfaces/diabetes';
 import { ServicioDiabetesService } from '../providers/servicio-diabetes.service';
 
@@ -16,9 +15,11 @@ export class TablaComponent {
 
   ngOnInit() {
     this.dataProvider.getResponse().subscribe((response) => { 
-      this.data = (response as Diabetes[]).slice(0,5); 
+      this.data = (response as Diabetes[]).slice(100,115); 
+      console.log(this.data)
     })
   }
+
 
 
 }

@@ -30,8 +30,8 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/js/scripts.js",
-              "src/js/datatables-simple-demo.js"
+              "src/assets/js/scripts.js",
+              "src/assets/js/datatables-simple-demo.js"
             ]
           },
           "configurations": {

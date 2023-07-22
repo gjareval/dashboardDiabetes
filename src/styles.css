@@ -11247,7 +11247,7 @@ body {
 
 
 .card-body table {
-  width: 40%;
+  width: 50%;
   border-collapse: collapse;
 }
 
@@ -11255,4 +11255,9 @@ body {
   border: 1px solid #ccc;
   padding: 5px;
   text-align: center;
+}
+
+.card-body th {
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
