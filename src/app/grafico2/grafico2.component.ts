@@ -66,6 +66,12 @@ export class Grafico2Component implements OnInit {
 
 
   crearGraficoPie() {
+
+    var existingChart = Chart.getChart('diabetesChart');
+      if (existingChart) {
+        existingChart.destroy();
+    }
+
     const canvas = document.getElementById('diabetesChart') as HTMLCanvasElement;
     const ctx = canvas.getContext('2d');
     canvas.width = 100;

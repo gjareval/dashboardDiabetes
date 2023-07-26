@@ -3,7 +3,7 @@ import { Grafico2Component } from './grafico2.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicioDiabetesService } from '../providers/servicio-diabetes.service';
 
-describe('GraficoComponent', () => {
+describe('Grafico2Component', () => {
   let component: Grafico2Component;
   let fixture: ComponentFixture<Grafico2Component>;
 

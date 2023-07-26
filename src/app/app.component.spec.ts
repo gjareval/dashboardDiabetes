@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GraficoComponent } from './grafico/grafico.component';
+import { Grafico2Component } from './grafico2/grafico2.component';
 import { Informacion1Component } from './informacion1/informacion1.component';
 import { Informacion2Component } from './informacion2/informacion2.component';
 import { TablaComponent } from './tabla/tabla.component';
@@ -21,6 +22,7 @@ import { TablaComponent } from './tabla/tabla.component';
 
         	//Registre TODOS los componentes que son instanciados en la aplicación mediante un selector
           GraficoComponent,
+          Grafico2Component,
           Informacion1Component,
           Informacion2Component,
           TablaComponent,
@@ -47,6 +49,13 @@ import { TablaComponent } from './tabla/tabla.component';
 
     it('should have the GraficoComponent', () => {
       const fixture = TestBed.createComponent(GraficoComponent);
+      fixture.detectChanges();
+      const compiled = fixture.debugElement.nativeElement;
+      expect(compiled.querySelector('div')).not.toBe(null);
+    });
+
+    it('should have the Grafico2Component', () => {
+      const fixture = TestBed.createComponent(Grafico2Component);
       fixture.detectChanges();
       const compiled = fixture.debugElement.nativeElement;
       expect(compiled.querySelector('div')).not.toBe(null);
