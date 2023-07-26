@@ -1,5 +1,5 @@
  name: Angular CI
-on:
+'on':
   push:
     branches:
       - main
