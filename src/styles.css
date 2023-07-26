@@ -11261,3 +11261,8 @@ body {
   background-color: #f2f2f2;
   font-weight: bold;
 }
+
+canvas {
+  width: 100px; /* Cambia este valor al ancho deseado */
+  height: 100px; /* Cambia este valor a la altura deseada */
+}

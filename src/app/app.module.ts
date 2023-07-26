@@ -8,6 +8,7 @@ import { GraficoComponent } from './grafico/grafico.component';
 import { TablaComponent } from './tabla/tabla.component';
 import { Informacion2Component } from './informacion2/informacion2.component';
 import { HttpClientModule } from  '@angular/common/http';
+import { Grafico2Component } from './grafico2/grafico2.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from  '@angular/common/http';
     Informacion1Component,
     GraficoComponent,
     TablaComponent,
-    Informacion2Component
+    Informacion2Component,
+    Grafico2Component
   ],
   imports: [
     BrowserModule,
