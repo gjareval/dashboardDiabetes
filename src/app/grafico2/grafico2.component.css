@@ -1,0 +1,5 @@
+/* Estilo personalizado para que la card ocupe todo el ancho disponible */
+.card {
+    width: 100%;
+  }
+  

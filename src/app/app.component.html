@@ -1,16 +1,24 @@
 <div id="layoutSidenav_content">
   <main>
       <div class="container-fluid px-4">
-          <h1 class="mt-4 text-center">La Diabetes</h1>
+          <h1 class="m-4 text-center">La Diabetes</h1>
           <h4 class="breadcrumb-item active text-center">Información y datos</h4>
           <!---Informacion 1 --->                      
           <app-informacion1></app-informacion1>
           <!---Tabla ---> 
           <app-tabla></app-tabla>
-          <!---Grafico ---> 
-          <app-grafico></app-grafico>
-          <!---Grafico 2 ---> 
-          <app-grafico2></app-grafico2>
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <!---Grafico ---> 
+                    <app-grafico></app-grafico>
+                </div>
+                <div class="col-md-6">
+                    <!---Grafico 2 ---> 
+                    <app-grafico2></app-grafico2>
+                </div>
+            </div>
+          </div>
           <!---Informacion 2 ---> 
           <app-informacion2></app-informacion2> 
       </div>
